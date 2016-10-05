@@ -1,0 +1,5 @@
+D:\Code\TDD_Homework\Day1Homework\Day1Homework\bin\Debug\Day1Homework.dll
+D:\Code\TDD_Homework\Day1Homework\Day1Homework\bin\Debug\Day1Homework.pdb
+D:\Code\TDD_Homework\Day1Homework\Day1Homework\obj\Debug\Day1Homework.csprojResolveAssemblyReference.cache
+D:\Code\TDD_Homework\Day1Homework\Day1Homework\obj\Debug\Day1Homework.dll
+D:\Code\TDD_Homework\Day1Homework\Day1Homework\obj\Debug\Day1Homework.pdb
