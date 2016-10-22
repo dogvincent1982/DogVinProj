@@ -36,5 +36,91 @@ namespace UnitTestDay2Homework
             int expected = 190;
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestShoppingCart_BuyFirstAndSecondAndThirdEpisode_Return270()
+        {
+            ShoppingCartService shoppingCartService = new ShoppingCartService();
+
+            List<BookInfo> buyBookList = new List<BookInfo>()
+            {
+                new BookInfo() { BookName = "Harry Potter I",Amount=1},
+                new BookInfo() { BookName = "Harry Potter II",Amount=1},
+                new BookInfo() { BookName = "Harry Potter III",Amount=1}
+            };
+            int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
+            int expected = 270;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestShoppingCart_Buy1234Episode_Return320()
+        {
+            ShoppingCartService shoppingCartService = new ShoppingCartService();
+
+            List<BookInfo> buyBookList = new List<BookInfo>()
+            {
+                new BookInfo() { BookName = "Harry Potter I",Amount=1},
+                new BookInfo() { BookName = "Harry Potter II",Amount=1},
+                new BookInfo() { BookName = "Harry Potter III",Amount=1},
+                new BookInfo() { BookName = "Harry Potter IV",Amount=1}
+            };
+            int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
+            int expected = 320;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestShoppingCart_Buy12345Episode_Return375()
+        {
+            ShoppingCartService shoppingCartService = new ShoppingCartService();
+
+            List<BookInfo> buyBookList = new List<BookInfo>()
+            {
+                new BookInfo() { BookName = "Harry Potter I",Amount=1},
+                new BookInfo() { BookName = "Harry Potter II",Amount=1},
+                new BookInfo() { BookName = "Harry Potter III",Amount=1},
+                new BookInfo() { BookName = "Harry Potter IV",Amount=1},
+                new BookInfo() { BookName = "Harry Potter V",Amount=1}
+            };
+            int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
+            int expected = 375;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestShoppingCart_Buy1233Episode_Return370()
+        {
+            ShoppingCartService shoppingCartService = new ShoppingCartService();
+
+            List<BookInfo> buyBookList = new List<BookInfo>()
+            {
+                new BookInfo() { BookName = "Harry Potter I",Amount=1},
+                new BookInfo() { BookName = "Harry Potter II",Amount=1},
+                new BookInfo() { BookName = "Harry Potter III",Amount=1},
+                new BookInfo() { BookName = "Harry Potter III",Amount=1}
+            };
+            int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
+            int expected = 370;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestShoppingCart_Buy12233Episode_Return460()
+        {
+            ShoppingCartService shoppingCartService = new ShoppingCartService();
+
+            List<BookInfo> buyBookList = new List<BookInfo>()
+            {
+                new BookInfo() { BookName = "Harry Potter I",Amount=1},
+                new BookInfo() { BookName = "Harry Potter II",Amount=1},
+                new BookInfo() { BookName = "Harry Potter II",Amount=1},
+                new BookInfo() { BookName = "Harry Potter III",Amount=1},
+                new BookInfo() { BookName = "Harry Potter III",Amount=1}
+            };
+            int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
+            int expected = 460;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
