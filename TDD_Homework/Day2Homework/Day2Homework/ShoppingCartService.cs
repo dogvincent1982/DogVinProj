@@ -6,46 +6,18 @@ namespace Day2Homework
 {
     public class ShoppingCartService
     {
-        public int CalculateTotalAmount(List<BookInfo> buyBookList)
+        public int CalculateTotalAmount(List<OrderBookInfo> orderBookInfo)
         {
-            List<int> bookHarryPotterEpisodeCountList = SortHarryPotterBookList(buyBookList);
+            var bookHarryPotterEpisodeCountList = orderBookInfo.GroupBy(info => info.BookID)
+                        .Select(group => new { BookID = group.Key, Count = group.Count() })
+                        .OrderByDescending(x => x.Count);
             int returnValue = 0;
             float discount = 1;
-            for (int i = bookHarryPotterEpisodeCountList.Max(); i > 0 ; i--)
+            for (int i = bookHarryPotterEpisodeCountList.First().Count; i > 0 ; i--)
             {
-                int bookCount = bookHarryPotterEpisodeCountList.Where(item => item / i >= 1).Count();
+                int bookCount = bookHarryPotterEpisodeCountList.Where(item => item.Count / i >= 1).Count();
                 discount = GetDiscount(bookCount);
                 returnValue += Convert.ToInt32((int)bookCount * discount * 100);
-            }
-            return returnValue;
-        }
-
-        private List<int> SortHarryPotterBookList(List<BookInfo> buyBookList)
-        {
-            List < int > returnValue = new List<int> { 0, 0, 0, 0, 0 };
-            foreach (BookInfo bookInfo in buyBookList)
-            {
-                switch (bookInfo.BookName)
-                {
-                    case "Harry Potter I":
-                        returnValue[0]++;
-                        break;
-                    case "Harry Potter II":
-                        returnValue[1]++;
-                        break;
-                    case "Harry Potter III":
-                        returnValue[2]++;
-                        break;
-                    case "Harry Potter IV":
-                        returnValue[3]++;
-                        break;
-                    case "Harry Potter V":
-                        returnValue[4]++;
-                        break;
-                    default:
-                        continue;
-
-                }
             }
             return returnValue;
         }

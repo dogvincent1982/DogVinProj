@@ -13,9 +13,9 @@ namespace UnitTestDay2Homework
         {
             ShoppingCartService shoppingCartService = new ShoppingCartService();
 
-            List<BookInfo> buyBookList = new List<BookInfo>()
+            List<OrderBookInfo> buyBookList = new List<OrderBookInfo>()
             {
-                new BookInfo() { BookName = "Harry Potter I",Amount=1}
+                new OrderBookInfo() { BookName = "Harry Potter I",Amount=1}
             };
             int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
             int expected = 100;
@@ -27,10 +27,10 @@ namespace UnitTestDay2Homework
         {
             ShoppingCartService shoppingCartService = new ShoppingCartService();
 
-            List<BookInfo> buyBookList = new List<BookInfo>()
+            List<OrderBookInfo> buyBookList = new List<OrderBookInfo>()
             {
-                new BookInfo() { BookName = "Harry Potter I",Amount=1},
-                new BookInfo() { BookName = "Harry Potter II",Amount=1}
+                new OrderBookInfo() {BookID = 1, BookName = "Harry Potter I",Amount=1},
+                new OrderBookInfo() {BookID = 2, BookName = "Harry Potter II",Amount=1}
             };
             int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
             int expected = 190;
@@ -42,11 +42,11 @@ namespace UnitTestDay2Homework
         {
             ShoppingCartService shoppingCartService = new ShoppingCartService();
 
-            List<BookInfo> buyBookList = new List<BookInfo>()
+            List<OrderBookInfo> buyBookList = new List<OrderBookInfo>()
             {
-                new BookInfo() { BookName = "Harry Potter I",Amount=1},
-                new BookInfo() { BookName = "Harry Potter II",Amount=1},
-                new BookInfo() { BookName = "Harry Potter III",Amount=1}
+                new OrderBookInfo() {BookID = 1, BookName = "Harry Potter I",Amount=1},
+                new OrderBookInfo() {BookID = 2, BookName = "Harry Potter II",Amount=1},
+                new OrderBookInfo() {BookID = 3, BookName = "Harry Potter III",Amount=1}
             };
             int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
             int expected = 270;
@@ -58,12 +58,12 @@ namespace UnitTestDay2Homework
         {
             ShoppingCartService shoppingCartService = new ShoppingCartService();
 
-            List<BookInfo> buyBookList = new List<BookInfo>()
+            List<OrderBookInfo> buyBookList = new List<OrderBookInfo>()
             {
-                new BookInfo() { BookName = "Harry Potter I",Amount=1},
-                new BookInfo() { BookName = "Harry Potter II",Amount=1},
-                new BookInfo() { BookName = "Harry Potter III",Amount=1},
-                new BookInfo() { BookName = "Harry Potter IV",Amount=1}
+                new OrderBookInfo() {BookID = 1, BookName = "Harry Potter I",Amount=1},
+                new OrderBookInfo() {BookID = 2, BookName = "Harry Potter II",Amount=1},
+                new OrderBookInfo() {BookID = 3, BookName = "Harry Potter III",Amount=1},
+                new OrderBookInfo() {BookID = 4, BookName = "Harry Potter IV",Amount=1}
             };
             int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
             int expected = 320;
@@ -75,13 +75,13 @@ namespace UnitTestDay2Homework
         {
             ShoppingCartService shoppingCartService = new ShoppingCartService();
 
-            List<BookInfo> buyBookList = new List<BookInfo>()
+            List<OrderBookInfo> buyBookList = new List<OrderBookInfo>()
             {
-                new BookInfo() { BookName = "Harry Potter I",Amount=1},
-                new BookInfo() { BookName = "Harry Potter II",Amount=1},
-                new BookInfo() { BookName = "Harry Potter III",Amount=1},
-                new BookInfo() { BookName = "Harry Potter IV",Amount=1},
-                new BookInfo() { BookName = "Harry Potter V",Amount=1}
+                new OrderBookInfo() {BookID = 1, BookName = "Harry Potter I",Amount=1},
+                new OrderBookInfo() {BookID = 2, BookName = "Harry Potter II",Amount=1},
+                new OrderBookInfo() {BookID = 3, BookName = "Harry Potter III",Amount=1},
+                new OrderBookInfo() {BookID = 4, BookName = "Harry Potter IV",Amount=1},
+                new OrderBookInfo() {BookID = 5, BookName = "Harry Potter V",Amount=1}
             };
             int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
             int expected = 375;
@@ -93,12 +93,12 @@ namespace UnitTestDay2Homework
         {
             ShoppingCartService shoppingCartService = new ShoppingCartService();
 
-            List<BookInfo> buyBookList = new List<BookInfo>()
+            List<OrderBookInfo> buyBookList = new List<OrderBookInfo>()
             {
-                new BookInfo() { BookName = "Harry Potter I",Amount=1},
-                new BookInfo() { BookName = "Harry Potter II",Amount=1},
-                new BookInfo() { BookName = "Harry Potter III",Amount=1},
-                new BookInfo() { BookName = "Harry Potter III",Amount=1}
+                new OrderBookInfo() {BookID = 1, BookName = "Harry Potter I",Amount=1},
+                new OrderBookInfo() {BookID = 2, BookName = "Harry Potter II",Amount=1},
+                new OrderBookInfo() {BookID = 3, BookName = "Harry Potter III",Amount=1},
+                new OrderBookInfo() {BookID = 3, BookName = "Harry Potter III",Amount=1}
             };
             int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
             int expected = 370;
@@ -110,13 +110,13 @@ namespace UnitTestDay2Homework
         {
             ShoppingCartService shoppingCartService = new ShoppingCartService();
 
-            List<BookInfo> buyBookList = new List<BookInfo>()
+            List<OrderBookInfo> buyBookList = new List<OrderBookInfo>()
             {
-                new BookInfo() { BookName = "Harry Potter I",Amount=1},
-                new BookInfo() { BookName = "Harry Potter II",Amount=1},
-                new BookInfo() { BookName = "Harry Potter II",Amount=1},
-                new BookInfo() { BookName = "Harry Potter III",Amount=1},
-                new BookInfo() { BookName = "Harry Potter III",Amount=1}
+                new OrderBookInfo() {BookID = 1, BookName = "Harry Potter I",Amount=1},
+                new OrderBookInfo() {BookID = 2, BookName = "Harry Potter II",Amount=1},
+                new OrderBookInfo() {BookID = 2, BookName = "Harry Potter II",Amount=1},
+                new OrderBookInfo() {BookID = 3, BookName = "Harry Potter III",Amount=1},
+                new OrderBookInfo() {BookID = 3, BookName = "Harry Potter III",Amount=1}
             };
             int actual = shoppingCartService.CalculateTotalAmount(buyBookList);
             int expected = 460;
